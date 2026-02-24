@@ -112,6 +112,13 @@ def scrape_tweet(url: str, headless: bool = False, chrome_profile: str = None):
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--disable-software-rasterizer")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-background-networking")
+    options.add_argument("--window-size=1280,720")  # smaller than 1920x1080
+    options.add_argument("--single-process")  # critical for low-memory envs
+    options.add_argument("--no-zygote")
     options.binary_location = "/usr/bin/chromium"
 
     driver = webdriver.Chrome(options=options)
