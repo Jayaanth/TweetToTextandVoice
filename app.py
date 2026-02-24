@@ -30,7 +30,7 @@ def scrape_x_article(url: str, headless: bool = False, chrome_profile: str = Non
     options.binary_location = "/usr/bin/chromium"
     
 
-    driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver",options=options)
+    driver = webdriver.Chrome(options=options)
 
     try:
         driver.get(url)
@@ -114,7 +114,7 @@ def scrape_tweet(url: str, headless: bool = False, chrome_profile: str = None):
     options.add_argument("--headless")
     options.binary_location = "/usr/bin/chromium"
 
-    driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver",options=options)
+    driver = webdriver.Chrome(options=options)
 
     try:
         driver.get(url)
